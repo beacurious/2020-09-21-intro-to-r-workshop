@@ -2,6 +2,7 @@
 # A very quick demonstation of the sorts of things your can do with R
 #
 
+# adding a comment to test git commit and push
 
 # Load the GGPLOT2 library
 library(ggplot2)

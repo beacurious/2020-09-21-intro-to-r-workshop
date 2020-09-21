@@ -245,16 +245,16 @@ class(decimal_number)
 #
 # eg:
 #
-#   thing <- c("some characters", 3.141, 100, TRUE)
-#   thing
-#   class(thing)
+  thing <- c("some characters", 3.141, 100, TRUE)
+  thing
+  class(thing)
 #
 # What will happen in each of these examples?
 #
-#   num_char <- c(1, 2, 3, "a")
-#   num_logical <- c(1, 2, 3, TRUE)
-#   char_logical <- c("a", "b", "c", TRUE)
-#   tricky <- c(1, 2, 3, "4")
+  num_char <- c(1, 2, 3, "a")
+  num_logical <- c(1, 2, 3, TRUE)
+  char_logical <- c("a", "b", "c", TRUE)
+  tricky <- c(1, 2, 3, "4")
 #
 # [Hint: use class() to check the data type of your objects]
 #
@@ -266,9 +266,9 @@ class(decimal_number)
 # How many values in combined_logical are "TRUE" (ie character 4 characters)
 # in the following example:
 #   
-#   num_logical <- c(1, 2, 3, TRUE)
-#   char_logical <- c("a", "b", "c", TRUE)
-#   combined_logical <- c(num_logical, char_logical)
+  num_logical <- c(1, 2, 3, TRUE)
+  char_logical <- c("a", "b", "c", TRUE)
+  combined_logical <- c(num_logical, char_logical)
 
 
 #
@@ -329,9 +329,13 @@ heights[complete.cases(heights)]
 # Using this vector of heights in inches, create a new vector 
 # with the NAs removed.
 # 
-#   heights <- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65, 64, 70, 63, 65)
+  heights <- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65, 64, 70, 63, 65)
 #
 # Solution
+  
+  heights <- heights[!is.na(heights)]
+  class(heights)
+  heights
 
 # Use the function median() to calculate the median of the heights vector.
 #

@@ -84,19 +84,20 @@ surveys[1, 6]
 surveys[, 6]
 
 # first column of the data frame (as a data frame)
-
+surveys[1]
 
 # first row (as a data frame)
-
+surveys[1, ]
 
 # first three elements in the 7th column (as a vector)
-
+surveys[1:3, ]
 
 # the 3rd row of the data frame (as a data.frame)
+surveys[3, ]
 
-
-# equivalent to head(metadata)
-
+# equivalent to head(surveys)
+head(surveys)
+surveys[1:6, ]
 
 # looking at the 1:6 more closely
 
@@ -113,15 +114,16 @@ surveys[, 6]
 # i.e., print just last 6 rows of the surveys dataframe
 #
 # Solution:
-
+surveys[(nrow(surveys)-5):nrow(surveys),]
 
 
 # We can omit (leave out) columns using '-'
-
-
+surveys[-1]
+head(surveys[c(-2, -3, -4)])
 
 # column "names" can be used in place of the column numbers
-
+names(surveys)
+head(surveys["month"])
 
 
 #
@@ -130,12 +132,23 @@ surveys[, 6]
 
 
 # factors have an order
+temperature <- factor(c("hot", "cold", "hot", "warm"))
+temperature
+levels(temperature)
+temperature <- factor(c("hot", "cold", "hot", "warm"), 
+                      level = c("cold", "warm", "hot"))
 
+levels(temperature)
 
 # Converting factors
-
+as.numeric(temperature) # converts levels to numbers representing each level
+as.character(temperature) # converts levels to strings
 
 # can be tricky if the levels are numbers
+year <- factor(c(1990, 1983, 1977, 1998, 1990))
+as.numeric(year) # not the best way to represent already numeric levels
+as.character(year) 
+as.numeric(as.character(year))
 
 
 # so does our survey data have any factors
